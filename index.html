@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Todo GUI</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2">
+                <h1 class="mb-4">Ultimate Todo</h1>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offCanvasNewTodo" aria-controls="offCanvasNewTodo">
+                            Add Todo
+                        </button>
+                        <button class="btn btn-secondary" type="button" id="deleteTodosButton">
+                            Start Over
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ----------- -->
+                <!-- TODOS TABLE -->
+                <!-- ----------- -->
+                <div class="row">
+                    <div class="col">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="todo-body">
+                                <!-- Dynamically produced -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- -------------------- -->
+                <!-- NEW TODO - OFFCANVAS -->
+                <!-- -------------------- -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offCanvasNewTodo"
+                    aria-labelledby="offCanvasNewTodoLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offCanvasNewTodoLabel">New Todo</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="newTodoName" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="newTodoName">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <button id="newItemButton" type="button" class="btn btn-secondary">+ Item</button>
+                                    <button id="newItemSave" type="button" class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <div id="newTodoItems">
+                                        <!-- Dynamically add todo items -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- --------------------- -->
+                <!-- EDIT TODO - OFFCANVAS -->
+                <!-- --------------------- -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offCanvasEdit"
+                    aria-labelledby="offCanvasEditLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offCanvasEditLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body" id="offCanvasEditBody">
+                        <!-- Dynamically show todo items -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
